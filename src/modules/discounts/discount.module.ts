@@ -1,0 +1,19 @@
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { DiscountController } from './discount.controller';
+import { DiscountService } from './discount.service';
+import { Discount, DiscountSchema } from './discount.schema';
+import { Product, ProductSchema } from '../products/product.schema';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      { name: Discount.name, schema: DiscountSchema },
+      { name: Product.name, schema: ProductSchema },
+    ]),
+  ],
+  controllers: [DiscountController],
+  providers: [DiscountService],
+  exports: [DiscountService],
+})
+export class DiscountModule {}
