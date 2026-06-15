@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "vercel-build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -20,7 +21,11 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "seed": "node seed.js"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
+    "@codegenie/serverless-express": "^5.0.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.0.1",
